@@ -8,7 +8,18 @@ package leetcode
 
 // @lc code=start
 func isPalindrome(x int) bool {
-	return false
+	if x < 0 {
+		return false
+	}
+	ans := 0
+	origin := x
+	for x > 0 {
+		ans *= 10
+		t := x % 10
+		ans += t
+		x /= 10
+	}
+	return ans == origin
 }
 
 // @lc code=end
